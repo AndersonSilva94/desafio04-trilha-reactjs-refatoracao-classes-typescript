@@ -1,14 +1,23 @@
-import { Component, createRef, useRef } from 'react';
+import { createRef } from 'react';
+import { FormHandles } from '@unform/core';
 import { FiCheckSquare } from 'react-icons/fi';
 
 import { Form } from './styles';
 import Modal from '../Modal';
 import Input from '../Input';
+import { FoodProps } from '../../types';
 
-export function ModalEditFood({ isOpen, setIsOpen, editingFood, handleUpdateFood }) {
-  const formRef = createRef();
+interface ModalEditFoodProps {
+  isOpen: boolean;
+  setIsOpen: () => void;
+  editingFood: FoodProps;
+  handleUpdateFood: (food: FoodProps) => Promise<void>;
+}
 
-  function handleSubmit(data) {
+export function ModalEditFood({ isOpen, setIsOpen, editingFood, handleUpdateFood }: ModalEditFoodProps) {
+  const formRef = createRef<FormHandles>();
+
+  function handleSubmit(data: FoodProps) {
     handleUpdateFood(data);
     setIsOpen();
   }
@@ -17,12 +26,12 @@ export function ModalEditFood({ isOpen, setIsOpen, editingFood, handleUpdateFood
     <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
       <Form ref={formRef} onSubmit={handleSubmit} initialData={editingFood}>
         <h1>Editar Prato</h1>
-        <Input name="image" placeholder="Cole o link aqui" />
+        <Input icon="" name="image" placeholder="Cole o link aqui" />
 
-        <Input name="name" placeholder="Ex: Moda Italiana" />
-        <Input name="price" placeholder="Ex: 19.90" />
+        <Input icon="" name="name" placeholder="Ex: Moda Italiana" />
+        <Input icon="" name="price" placeholder="Ex: 19.90" />
 
-        <Input name="description" placeholder="Descrição" />
+        <Input icon="" name="description" placeholder="Descrição" />
 
         <button type="submit" data-testid="edit-food-button">
           <div className="text">Editar Prato</div>
