@@ -2,7 +2,7 @@ import { createRef } from 'react';
 import { FiCheckSquare } from 'react-icons/fi';
 
 import { Form } from './styles';
-import Modal from '../Modal';
+import { Modal } from '../Modal';
 import Input from '../Input';
 import { FoodProps } from '../../types';
 import { FormHandles } from '@unform/core';
