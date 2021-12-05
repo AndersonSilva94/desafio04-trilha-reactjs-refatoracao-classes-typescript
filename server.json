@@ -21,7 +21,7 @@
       "name": "Ao molho",
       "price": "19.90",
       "description": "Macarrão ao molho branco, fughi e cheiro verde das montanhas",
-      "available": false,
+      "available": true,
       "id": 4
     }
   ]
