@@ -6,5 +6,3 @@ export interface FoodProps {
   available: boolean;
   image: string;
 }
-
-export type InsertFoodProps = Omit<FoodProps, 'id' | 'available'>
