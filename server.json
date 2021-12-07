@@ -12,8 +12,8 @@
       "id": 3,
       "name": "A la Camarón",
       "description": "Macarrão com vegetais de primeira linha e camarão dos 7 mares.",
-      "price": "26.00",
-      "available": true,
+      "price": "20.00",
+      "available": false,
       "image": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food3.png"
     },
     {
